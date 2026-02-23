@@ -1,106 +1,111 @@
-Machine Learning Task 1
-Breast Cancer — Binary Classification
-🎯 Objective
+# Machine Learning Task 1
+## Breast Cancer — Binary Classification
 
-In this task, you will build and compare multiple binary classification models to predict whether a tumor is:
+---
 
-0 — Malignant (Cancerous)
+## Objective
 
-1 — Benign (Non-cancerous)
+In this task, you will build and compare multiple **binary classification** models to predict whether a tumor is:
 
-You must use the models covered in class:
+- **0 — Malignant (Cancerous)**
+- **1 — Benign (Non-cancerous)**
 
-Logistic Regression
+You must use the following models covered in class:
 
-Support Vector Machine (SVM)
+- Logistic Regression
+- Support Vector Machine (SVM)
+- K-Nearest Neighbors (KNN)
 
-K-Nearest Neighbors (KNN)
-
-The focus of this task is model training, evaluation, and comparison.
+The focus of this task is **model training, evaluation, and comparison**.
 
 ⚠️ Feature scaling is NOT allowed in this task.
 
-📦 Dataset
+---
 
-We will use the Breast Cancer Wisconsin Dataset, available directly in scikit-learn.
+## Dataset
 
-Dataset Overview
+We will use the **Breast Cancer Wisconsin Dataset**, available directly in `scikit-learn`.
 
-569 samples
+### Dataset Overview
 
-30 numerical features
-
-Binary target variable
-
-No missing values
+- 569 samples
+- 30 numerical features
+- Binary target variable
+- No missing values
 
 Each feature represents a measurement extracted from a digitized image of a breast mass (e.g., radius, texture, area, smoothness, concavity, symmetry, etc.).
 
-📂 Dataset Loading
+---
 
-Use the following code:
+## Dataset Loading
 
+Use the following code to load the dataset:
+
+```python
 from sklearn.datasets import load_breast_cancer
 
 data = load_breast_cancer()
 X = data.data
 y = data.target
-📌 Required Tasks
-1️⃣ Train-Test Split
+```
+
+---
+
+## Required Tasks
+
+### 1. Train-Test Split
 
 Split the dataset using:
 
-test_size = 0.2
+- `test_size = 0.2`
+- `random_state = 42`
+- `stratify = y`
 
-random_state = 42
-
-stratify = y
-
-2️⃣ Model Training
+### 2. Model Training
 
 Train the following models:
 
-Logistic Regression
-
-SVM
-
-KNN
+- Logistic Regression
+- SVM
+- KNN
 
 Use default parameters unless clearly justified.
 
-3️⃣ Model Evaluation
+### 3. Model Evaluation
 
 For each model, compute:
 
-Accuracy
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
 
-Precision
+### 4. Model Comparison
 
-Recall
-
-F1-score
-
-Confusion Matrix
-
-4️⃣ Model Comparison
-
-Create a comparison table summarizing the evaluation metrics.
+Create a comparison table summarizing the evaluation metrics for all models.
 
 Then write a short conclusion answering:
 
-Which model performed best?
+- Which model performed best?
+- In a medical context, which metric is most important and why?
 
-In a medical context, which metric is most important and why?
+---
 
-📁 Required Project Structure
+## Project Structure
+
+Your project must follow this structure:
+
+```
 breast-cancer-binary-classification/
-
 ├── modeling.ipynb
 └── README.md
-📝 Submission Requirements
+```
 
-Clean and organized notebook
+---
 
-Clear metric comparison
+## Submission Requirements
 
-Written conclusion
+- Clean and organized notebook
+- Clear metric comparison
+- Written conclusion
