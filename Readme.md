@@ -1,48 +1,106 @@
-# Machine Learning Task 1
+Machine Learning Task 1
+Breast Cancer — Binary Classification
+🎯 Objective
 
-Classification on MNIST handwritten digits.
+In this task, you will build and compare multiple binary classification models to predict whether a tumor is:
 
-# Task 1: 🔢 MNIST Digit Classification
+0 — Malignant (Cancerous)
 
-A machine learning model to classify handwritten digits (0–9) using the MNIST dataset.
+1 — Benign (Non-cancerous)
 
----
+You must use the models covered in class:
 
-## 📌 Dataset
+Logistic Regression
 
-This task focuses on building a classification model to recognize handwritten digits from images. The MNIST dataset contains **70,000 grayscale images** of digits, each **28×28 pixels**, flattened into **784 features**.
+Support Vector Machine (SVM)
 
-**Dataset Features:**
+K-Nearest Neighbors (KNN)
 
-* Each sample is an image of a handwritten digit.
-* Each image is represented as **784 numerical features** corresponding to pixel intensity values (0–255).
-* No categorical features; all features are numeric.
+The focus of this task is model training, evaluation, and comparison.
 
-**Target Variable:**
+⚠️ Feature scaling is NOT allowed in this task.
 
-* Digit label (0–9)
-* Represents the actual digit depicted in the image.
-* This is a **multiclass classification problem** with 10 classes.
+📦 Dataset
 
----
+We will use the Breast Cancer Wisconsin Dataset, available directly in scikit-learn.
 
-## 📂 Dataset Loading
+Dataset Overview
 
-The MNIST dataset is loaded using `scikit-learn`’s `fetch_openml`. Students can use the following code to load the dataset:
+569 samples
 
-```python
-from sklearn.datasets import fetch_openml
+30 numerical features
 
-# Load MNIST dataset
-mnist = fetch_openml('mnist_784', version=1, as_frame=False)
-x, y = mnist["data"], mnist["target"].astype(int)
-```
+Binary target variable
 
----
+No missing values
 
-## 🔁 Workflow Overview
+Each feature represents a measurement extracted from a digitized image of a breast mass (e.g., radius, texture, area, smoothness, concavity, symmetry, etc.).
 
-* Load the MNIST dataset
-* Split into training and testing sets
-* Train the model
-* Evaluate using accuracy and classification report
+📂 Dataset Loading
+
+Use the following code:
+
+from sklearn.datasets import load_breast_cancer
+
+data = load_breast_cancer()
+X = data.data
+y = data.target
+📌 Required Tasks
+1️⃣ Train-Test Split
+
+Split the dataset using:
+
+test_size = 0.2
+
+random_state = 42
+
+stratify = y
+
+2️⃣ Model Training
+
+Train the following models:
+
+Logistic Regression
+
+SVM
+
+KNN
+
+Use default parameters unless clearly justified.
+
+3️⃣ Model Evaluation
+
+For each model, compute:
+
+Accuracy
+
+Precision
+
+Recall
+
+F1-score
+
+Confusion Matrix
+
+4️⃣ Model Comparison
+
+Create a comparison table summarizing the evaluation metrics.
+
+Then write a short conclusion answering:
+
+Which model performed best?
+
+In a medical context, which metric is most important and why?
+
+📁 Required Project Structure
+breast-cancer-binary-classification/
+
+├── modeling.ipynb
+└── README.md
+📝 Submission Requirements
+
+Clean and organized notebook
+
+Clear metric comparison
+
+Written conclusion
